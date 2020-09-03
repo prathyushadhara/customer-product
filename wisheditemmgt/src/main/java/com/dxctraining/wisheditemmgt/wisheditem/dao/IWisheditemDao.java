@@ -13,6 +13,6 @@ public interface IWisheditemDao extends JpaRepository<WishedItem, String>{
 	
 	List<WishedItem> findByName(String name);
 	
-	@Query("from wishedList where productId=:productId and customerId=:customerId")
+	@Query("from wishedItem where productId=:productId and customerId=:customerId")
 	List<WishedItem> allWishedItemFromProducts(@Param("productId") String productId, @Param("customerId")Integer customerId);
 }

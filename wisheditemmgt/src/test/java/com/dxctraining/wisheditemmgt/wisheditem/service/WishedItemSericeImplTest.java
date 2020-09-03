@@ -39,7 +39,7 @@ public class WishedItemSericeImplTest {
 
 	@Test
 	public void testAdd_2() {
-		String name = "phone";
+		String name = "oppo";
 		WishedItem wished = new WishedItem();
 		wished.setName(name);
 		wished = service.save(wished);
@@ -52,7 +52,7 @@ public class WishedItemSericeImplTest {
 
 	@Test
 	public void testFindById_1() {
-		String name = "computer";
+		String name = "mi";
 		WishedItem wished = new WishedItem();
 		wished.setName(name);
 		wished = entitymanager.merge(wished);

@@ -20,12 +20,9 @@ public class WishedItemServiceImpl implements IWishedItemService {
 
 	@Override
 	public WishedItem save(WishedItem wishedItem) {
-
 		wishedItem = dao.save(wishedItem);
 		return wishedItem;
 	}
-
-	
 
 	@Override
 	public List<WishedItem> allWishedItems() {

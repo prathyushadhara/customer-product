@@ -1,6 +1,6 @@
 package com.dxctraining.wisheditemmgt.wisheditem.wishlist.service;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -22,9 +22,9 @@ import javax.persistence.EntityManager;
 import java.util.ArrayList;
 import java.util.List;
 
-@DataJpaTest
 @ExtendWith(SpringExtension.class)
-@Import({WishedItemServiceImpl.class})
+@DataJpaTest
+@Import({ WishedItemServiceImpl.class })
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
 
 public class WishedItemSericeImplTest {
@@ -40,18 +40,19 @@ public class WishedItemSericeImplTest {
 		Executable executable = () -> service.save(null);
 		Assertions.assertThrows(InvalidArgumentException.class, executable);
 	}
+
 	@Test
 	public void testAdd_2() {
 		int customerId = 1;
 		String productId = "1";
-		WishedItem wishedItem = new WishedItem(customerId,productId);
+		WishedItem wishedItem = new WishedItem(customerId, productId);
 		wishedItem = service.save(wishedItem);
-		List<WishedItem>list = new ArrayList<>();
+		List<WishedItem> list = new ArrayList<>();
 		list.add(wishedItem);
 		WishedItem fetched = list.get(0);
 		Assertions.assertEquals(1, list.size());
 		Assertions.assertEquals(customerId, fetched.getCustomerId());
 		Assertions.assertEquals(productId, fetched.getProductId());
 	}
-	
+
 }

@@ -43,7 +43,7 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	@Override
-	public List<Product> displayAllProducts() {
+	public List<Product> AllProducts() {
 		List<Product> list = dao.findAll();
 		return list;
 	}

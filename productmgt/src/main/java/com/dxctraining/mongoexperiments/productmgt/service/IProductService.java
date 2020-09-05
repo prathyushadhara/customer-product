@@ -14,5 +14,5 @@ public interface IProductService{
 	
 	List<Product> findProductByName(String name);
 	
-	List<Product> displayAllProducts();
+	List<Product> AllProducts();
 }

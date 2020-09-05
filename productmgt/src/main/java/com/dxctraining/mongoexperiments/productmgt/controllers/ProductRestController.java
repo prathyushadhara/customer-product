@@ -34,15 +34,15 @@ public class ProductRestController {
 	}
 
 	@GetMapping("/get/{id}")
-	public ProductDto findSupplier(@PathVariable("id") String id) {
-		Product product = service.findById(id);
+	public ProductDto findproduct(@PathVariable("id") String id) {
+		Product product = service.findProductById(id);
 		ProductDto response = util.productDto(product);
 		return response;
 	}
 
 	@GetMapping("/get/product/{name}")
 	public List<ProductDto> fetchProductByName(@PathVariable("name") String name) {
-		List<Product> list = service.findByName(name);
+		List<Product> list = service.findProductByName(name);
 		List<ProductDto> response = new ArrayList<>();
 		for (Product product : list) {
 			ProductDto dto = util.productDto(product);

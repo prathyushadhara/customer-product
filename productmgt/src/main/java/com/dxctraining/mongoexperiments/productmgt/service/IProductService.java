@@ -4,15 +4,15 @@ import java.util.List;
 
 import com.dxctraining.mongoexperiments.productmgt.entities.Product;
 
-public interface IProductService {
+
+
+public interface IProductService{
+	
+	Product findProductById(String id);
 
 	Product save(Product product);
-
-	Product findById(String id);
-	List<Product> findAll();
-
-	List<Product> findByName(String name);
-
 	
-
+	List<Product> findProductByName(String name);
+	
+	List<Product> displayAllProducts();
 }

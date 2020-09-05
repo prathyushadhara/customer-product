@@ -41,7 +41,7 @@ public class ProductServiceImplTest {
 
 		Product product1 = new Product(name);
 		product1 = mongo.save(product1);
-		Product fetched = productService.findById(product1.getId());
+		Product fetched = productService.findProductById(product1.getId());
 		Assertions.assertEquals(name, fetched.getName());
 
 		Assertions.assertEquals(product1.getId(), fetched.getId());
